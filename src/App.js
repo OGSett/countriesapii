@@ -11,7 +11,7 @@ function App() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get('https://restcountries.com/v3.1/all?fields=flags,name,population,region,capital')
+    axios.get('https://restcountries.com/v3.1/all?fields=flags,name,population,region,subregion,capital,tld,languages,currencies,borders')
     .then(response => {
       setCountries(response.data);
       setLoading(false)
