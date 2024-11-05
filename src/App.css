@@ -1,0 +1,291 @@
+:root {
+  --dark-blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
+  --very-dark-blue-bg: hsl(207, 26%, 17%); /* Dark Mode Background */
+  --very-dark-blue-text: hsl(200, 15%, 8%); /* Light Mode Text */
+  --dark-gray-input: hsl(0, 0%, 52%); /* Light Mode Input */
+  --very-light-gray-bg: hsl(0, 0%, 98%); /* Light Mode Background */
+  --white: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
+}
+
+body.light {
+    --background-color: var(--white);
+    --text-color: var(--very-dark-blue-text);
+}
+body.dark {
+    --background-color: var(--dark-blue);
+    --text-color: var(--white);
+}
+.mainContent.light {
+    --background1-color: var(--very-light-gray-bg);
+    --text-color1: var(--very-dark-blue-text);
+}
+.mainContent.dark {
+    --background1-color: var(--very-dark-blue-bg);
+    --text-color1: var(--white);
+}
+.searchIcon.light {
+    --background1-color: var(--very-light-gray-bg);
+    --text-color1: var(--very-dark-blue-text);
+}
+.searchIcon.dark {
+    --background1-color: var(--very-dark-blue-bg);
+    --text-color1: var(--white);
+}
+.searchInp.light {
+    --shadow-box1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --background11-color: var(--white);
+    --text-color1: var(--very-dark-blue-text);
+}
+.searchInp.dark {
+    --background11-color: var(--dark-blue);
+    --text-color1: var(--white);
+}
+.filter.light {
+    --shadow-box1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --background11-color: var(--white);
+    --text-color1: var(--very-dark-blue-text);
+}
+.filter.dark {
+    --background11-color: var(--dark-blue);
+    --text-color1: var(--white);
+}
+.dropBoxContent.light {
+    --shadow-box1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --background11-color: var(--white);
+    --text-color1: var(--very-dark-blue-text);
+}
+.dropBoxContent.dark {
+    --background11-color: var(--dark-blue);
+    --text-color1: var(--white);
+}
+.countryCard.light {
+    --shadow-box1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --background11-color: var(--white);
+    --text-color1: var(--very-dark-blue-text);
+}
+.countryCard.dark {
+    --background11-color: var(--dark-blue);
+    --text-color1: var(--white);
+}
+.logo.light {
+    --text-color1: var(--very-dark-blue-text);
+}
+.logo.dark {
+    --text-color1: var(--white);
+}
+
+
+
+.searchInp {
+    background-color: var(--background11-color);
+    color: var(--text-color1);
+    box-shadow: var(--shadow-box1);
+}
+.filter {
+    background-color: var(--background11-color);
+    color: var(--text-color1);
+    box-shadow: var(--shadow-box1);
+}
+.logo {
+    color: var(--text-color1);
+}
+.dropBoxContent {
+    background-color: var(--background11-color);
+    color: var(--text-color1);
+    box-shadow: var(--shadow-box1);
+}
+.countryCard {
+    background-color: var(--background11-color);
+    color: var(--text-color1);
+    box-shadow: var(--shadow-box1);
+}
+.mainContent {
+    background-color: var(--background1-color);
+    color: var(--text-color1);
+}
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+
+@media only screen and (max-width: 580px){
+    .logo {
+        text-decoration: none;
+    }
+    
+    .navWrapper {
+      padding-left: 5px;
+      padding-right: 8px;
+      margin: 0;
+      /* padding: 0; */
+      display: flex;
+      flex-direction: row;
+      /* padding: 10px 0 10px 0; */
+      /* height: 70px; */
+      justify-content: space-between;
+    }
+    .mainContent {
+        min-height: 100vh;
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 20px;
+    }
+    .countryCard {
+        width: 100%;
+        /* background-color: aquamarine; */
+        height: auto;
+        /* margin-left: 200px; */
+        border-radius: 15px;
+        margin-bottom: 15px;
+        /* background-color: antiquewhite; */
+    }
+
+    .infoHolder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        /* gap: 15px; */
+        padding: 20px;
+    }
+
+    .infoHolder p {
+        margin: 10px;
+    }
+
+    .imgHolder img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 15px;
+        width: 100%;
+    }
+
+    .filter {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        height: 50px;
+        border-radius: 10px;
+        margin: 0 25px 25px 20px;
+    }
+
+    .dropBoxContent {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        z-index: 1;
+        left: 20px;
+        top: 205px;
+        gap: 5px;
+        width: 50%;
+        border-radius: 5px;
+    }
+
+    .cntbtn {
+        background-color: transparent;
+        border: none;
+        padding: 5px;
+        color: inherit;
+        text-align: left;
+        padding-left: 12px;
+    }
+
+    .cntbtn:hover {
+        cursor: pointer;
+    }
+
+    .search {
+        position: relative;
+        /* margin-left: 15px; */
+        width: 100%;
+    }
+
+   .search input{
+        width: 80%;
+        height: 40px;
+        margin: 25px 25px 25px 20px;
+        padding-right: 15px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .searchInp {
+        text-align: center;
+    }
+
+    .searchIcon {
+        position: absolute;
+        left: 50px;
+        bottom: 35px;
+        z-index: 1;
+    }
+
+
+    .btntheme {
+      background-color: transparent;
+      outline: none;
+      border: none;
+    }
+
+    .islight {
+        color: aliceblue;
+    }
+
+    .left {
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+  
+    .left h2 {
+      font-family: 'Nunito Sans';
+      font-size: 18px;
+    }
+  
+    .right {
+      display: flex;
+      gap: 10px;
+
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btntheme:hover {
+        cursor: pointer;
+    }
+}
+
+@media only screen and (min-width: 580px){
+  .navWrapper {
+      background-color: rgb(18, 23, 128);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+  }
+  .left {
+      margin: 0;
+      padding: 0;
+      align-items: center;
+  }
+  
+  .left h2 {
+      font-family: 'Nunito Sans';
+      font-size: 18px;
+  }
+  
+  .right {
+      display: flex;
+      gap: 10px;
+
+      justify-content: center;
+      align-items: center;
+  }
+  
+  
+}
