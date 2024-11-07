@@ -23,7 +23,7 @@ const NavBar = ({dark, setDark, isDark, setIsDark, handleTheme}) => {
             </div>
             <div className="right">
                 <button onClick={() => setDark(dark === 0 ? 1 : 0)} className="btntheme">
-                <MdOutlineDarkMode className={dark === 1 ? 'islight' : ''} onClick={handleTheme} />
+                <MdOutlineDarkMode className={dark === 1 ? 'islight' : 'ss'} onClick={handleTheme} />
                 </button>
                 <span className="chooseTheme">{modeIs} Mode</span>
             </div>

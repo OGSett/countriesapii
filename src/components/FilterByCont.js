@@ -9,7 +9,7 @@ const FilterCont = ({ countries, theme, selectedRegion, searchValue }) => {
 
     const Test = () => {
         return (
-            <ul>
+            <ul className="cards">
             {filteredCountriesItems.length > 0 ? (
                 filteredCountriesItems
             ) : (
@@ -38,30 +38,30 @@ const FilterCont = ({ countries, theme, selectedRegion, searchValue }) => {
         const formattedNumber = selectedCountry.population.toLocaleString();
         console.log(selectedCountry)
         return (
-            <div>
-                <a href="/"><IoArrowBack /> <span>Back</span></a>
-                <div>
+            <div className="searchResultHolder">
+                <a href="/"  className={`goback ${theme}`}><IoArrowBack /> <span>Back</span></a>
+                <div className="imgHolderTab">
                     <img src={selectedCountry.flags.png} alt={`${selectedCountry.name.common} flag`} />
                 </div>
-                <div className="infoHolder">
+                <div className="infoHolderTab">
                     <div className="info">
                         <div className="mainInfo">
                             <h3>{selectedCountry.name.common}</h3>
-                            <p><strong>Native Name :</strong>{firstNativeName}</p>
-                            <p><strong>Population :</strong>{formattedNumber}</p>
-                            <p><strong>Region :</strong>{selectedCountry.region}</p>
-                            <p><strong>Sub Region :</strong>{selectedCountry.subregion}</p>
-                            <p><strong>Capital :</strong>{selectedCountry.capital}</p>
+                            <p><strong>Native Name : </strong>{firstNativeName}</p>
+                            <p><strong>Population : </strong>{formattedNumber}</p>
+                            <p><strong>Region : </strong>{selectedCountry.region}</p>
+                            <p><strong>Sub Region : </strong>{selectedCountry.subregion}</p>
+                            <p><strong>Capital : </strong>{selectedCountry.capital}</p>
                         </div>
                         <div className="SubInfo">
-                            <p><strong>Top Level Domain :</strong>{selectedCountry.tld}</p>
-                            <p><strong>Currencies :</strong>{firstCurrency}</p>
-                            <p><strong>Languages :</strong>{formattedLanguages}</p> 
+                            <p><strong>Top Level Domain : </strong>{selectedCountry.tld}</p>
+                            <p><strong>Currencies : </strong>{firstCurrency}</p>
+                            <p><strong>Languages : </strong>{formattedLanguages}</p> 
                             
                         </div>
                     </div>
                     <div className="bordersHolder">
-                        <p><strong>Border Countries:</strong></p>
+                        <p><strong>Border Countries: </strong></p>
                         {selectedCountry.borders && selectedCountry.borders.length > 0 ? (
                             selectedCountry.borders.map((borderCode, index) => (
                             <button key={index} className="border-button">
@@ -89,7 +89,7 @@ const FilterCont = ({ countries, theme, selectedRegion, searchValue }) => {
             const searchCountryItems = countries
                 .filter((country) => country.name.common.toLowerCase().includes(searchValue.toLowerCase()))
                 .map((country, index) => (
-                    <li key={index} className={`countryCard ${theme}`} onClick={() => handleCardClick(country.name.common)}>
+                    <li key={index} className={`countryCard  ${theme}`} onClick={() => handleCardClick(country.name.common)}>
                         <div className="imgHolder">
                             <img src={country.flags.png} alt={`${country.name.common} flag`} width="30" />
                         </div>
@@ -125,7 +125,7 @@ const FilterCont = ({ countries, theme, selectedRegion, searchValue }) => {
                         <img src={country.flags.png} alt={`${country.name.common} flag`} width="30" />
                     </div>
                     <div className="infoHolder">
-                        <p><strong>Name:</strong> {country.name.common}</p>
+                        <p className="cardCountryName"><strong>{country.name.common}</strong></p>
                         <p><strong>Population:</strong> {country.population.toLocaleString()}</p>
                         <p><strong>Region:</strong> {country.region}</p>
                         <p><strong>Capital:</strong> {country.capital || "N/A"}</p>

@@ -49,6 +49,15 @@ body.dark {
     --background11-color: var(--dark-blue);
     --text-color1: var(--white);
 }
+.myFoot.light {
+    --shadow-box1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --background11-color: var(--white);
+    --text-color1: var(--very-dark-blue-text);
+}
+.myFoot.dark {
+    --background11-color: var(--dark-blue);
+    --text-color1: var(--white);
+}
 .dropBoxContent.light {
     --shadow-box1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     --background11-color: var(--white);
@@ -64,6 +73,15 @@ body.dark {
     --text-color1: var(--very-dark-blue-text);
 }
 .countryCard.dark {
+    --background11-color: var(--dark-blue);
+    --text-color1: var(--white);
+}
+.goback.light {
+    --shadow-box1: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    --background11-color: var(--white);
+    --text-color1: var(--very-dark-blue-text);
+}
+.goback.dark {
     --background11-color: var(--dark-blue);
     --text-color1: var(--white);
 }
@@ -86,6 +104,11 @@ body.dark {
     color: var(--text-color1);
     box-shadow: var(--shadow-box1);
 }
+.myFoot {
+    background-color: var(--background11-color);
+    color: var(--text-color1);
+    box-shadow: var(--shadow-box1);
+}
 .logo {
     color: var(--text-color1);
 }
@@ -99,6 +122,11 @@ body.dark {
     color: var(--text-color1);
     box-shadow: var(--shadow-box1);
 }
+.goback {
+    background-color: var(--background11-color);
+    color: var(--text-color1);
+    box-shadow: var(--shadow-box1);
+}
 .mainContent {
     background-color: var(--background1-color);
     color: var(--text-color1);
@@ -106,6 +134,8 @@ body.dark {
 body {
     background-color: var(--background-color);
     color: var(--text-color);
+    font-family: 'Nunito Sans';
+    /* overflow: hidden;     */
 }
 
 
@@ -113,6 +143,62 @@ body {
 @media only screen and (max-width: 580px){
     .logo {
         text-decoration: none;
+    }
+    
+    .searchResultHolder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mainInfo h3 {
+        margin: 10px;
+        margin-left: 0;
+        font-size: 20px;
+    }
+    .mainInfo  {
+        display: flex;
+        flex-direction: column;
+    }
+    .mainInfo p {
+        margin: 8px 0 8px 0;
+    }
+    
+    .myFoot {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .goback {
+        width: 30%;
+        margin: 20px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        font-weight: bold;
+        justify-content: space-around;
+        border-radius: 5px;
+    }
+
+    .imgHolderTab img{
+        /* display: flex; */
+        /* justify-content: space-evenly; */
+        /* width: 100%;
+        height: auto; */
+        display: block;
+    }
+    .imgHolderTab {
+        display: flex;
+        /* justify-content: space-evenly; */
+        width: 100%;
+        height: auto;
+    }
+    .imgHolderTab {
+        display: flex;
+        /* justify-content: space-evenly; */
+        /* width: 100%; */
+        /* height: auto; */
+        justify-content: center;
     }
     
     .navWrapper {
@@ -153,8 +239,37 @@ body {
         padding: 20px;
     }
 
+    .subInfo {
+        display: flex;
+        flex-direction: column;
+        
+    }
+    .subInfo p{
+        margin: 8px 0 8px 0;
+    }
+    .infoHolderTab {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* align-items: flex-start; */
+        /* gap: 15px; */
+        padding: 20px;
+        gap: 40px;
+    }
+
     .infoHolder p {
         margin: 10px;
+    }
+
+    .goback {
+        text-decoration: none;
+
+    }
+
+    .info {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
     }
 
     .imgHolder img {
@@ -259,33 +374,165 @@ body {
     }
 }
 
-@media only screen and (min-width: 580px){
-  .navWrapper {
-      background-color: rgb(18, 23, 128);
+@media only screen and (min-width: 586px){
+    .navWrapper {
       margin: 0;
-      padding: 0;
+      padding: 5px;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-  }
-  .left {
+    }
+    .logo {
+      text-decoration: none;
+      
+    }
+
+    .left {
       margin: 0;
       padding: 0;
       align-items: center;
-  }
+    }
   
-  .left h2 {
+    .left h2 {
       font-family: 'Nunito Sans';
-      font-size: 18px;
-  }
+      font-size: 25px;
+      padding-left: 40px;
+    }
+    .cardHolder {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .btntheme {
+        background-color: transparent;
+        padding: 5px;
+        width: 20px;
+        border: none;
+    }
+    .islight {
+        color: var(--white);
+        font-size: 1.4rem;
+    }
+
+    .chooseTheme {
+        font-size: 20px;
+    }
+
+    .ss  {
+        font-size: 1.4rem;
+    }
+
+    .cards, .searchResultHolder{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 50px;
+        list-style: none;
+        /* margin: 60px  50px 20px 60px; */
+        padding: 0;
+        justify-content: center; 
+        align-content: center;  
+        /* height: 100vh; */
+        overflow-y: scroll;
+        /* overflow: hidden; */
+
+    }
+
+    .cards::-webkit-scrollbar {
+        display: none;
+    }
+    .searchResultHolder::-webkit-scrollbar {
+        display: none;
+    }
+
+    .imgHolder img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 15px;
+        width: 100%;
+        object-fit: fill;
+        height: 187px;
+    }
+    .imgHolder  {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 15px;
+        width: 100%;
+        height: 50%;
+    }
+
+    .countryCard {
+        height: 400px;
+        border-radius: 15px;
+    }
+    .infoHolder {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .infoHolder p {
+        margin: 10px;
+    }
   
   .right {
       display: flex;
       gap: 10px;
-
       justify-content: center;
       align-items: center;
-  }
+      padding-right: 40px;
+    }
+    
+    .cardCountryName {
+        font-size: 25px;
+    }
+
+    /* .filter {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 50%;
+        height: 50px;
+        border-radius: 10px;
+        margin: 0 25px 25px 20px;
+    } */
+
+    .searchandfilterholder {
+        display: flex;
+        justify-content: space-around;
+        /* width: 90%; */
+        padding: 40px;
+       
+    }
+
+    .search input{
+        width: 350px;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    .searchInp {
+        text-align: center;
+    }
+
+    .searchIcon {
+        position: absolute;
+        left: 50px;
+        bottom: 35px;
+        z-index: 1;
+    }
+    .myFoot {
+        display: none;
+    }
+
+    .filter {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 15%;
+        height: 50px;
+        border-radius: 10px;
+        /* margin: 0 15px 25px 20px; */
+        margin-left: 700px;
+        /* overflow: hidden; */
+    }
   
   
 }

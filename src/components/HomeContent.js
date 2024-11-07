@@ -70,14 +70,17 @@ const HomeContent = ({countries, dark, setDark, isDark, setIsDark, handleTheme})
     return ( 
         <main className={`mainContent ${theme}`}>
             <div className="searchAndFilter">
-                <div className="search">
-                    <IoIosSearch className={`searchIcon  ${theme}`}/>
-                    <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className={`searchInp  ${theme}`} placeholder="Search for country"/>
+                <div className="searchandfilterholder">
+                    <div className="search">
+                        <IoIosSearch className={`searchIcon  ${theme}`}/>
+                        <input type="text" value={searchValue} onChange={(e) => setSearchValue(e.target.value)} className={`searchInp  ${theme}`} placeholder="Search for country"/>
+                    </div>
+                    <div className={`filter ${theme}`}>
+                        <span>Filter by Region</span>
+                        <FaChevronDown className='dropIcon' onClick={handleDropBox} />
+                    </div>
                 </div>
-                <div className={`filter ${theme}`}>
-                    <span>Filter by Region</span>
-                    <FaChevronDown className='dropIcon' onClick={handleDropBox} />
-                </div>
+                
                 {drop? ( <div className={`dropBoxContent ${theme}`}>
                     <button className="cntbtn" onClick={() => (setSelectedRegion('Africa'), setDrop(!drop))}>Africa</button>
                     <button className="cntbtn" onClick={() => (setSelectedRegion('Americas'), setDrop(!drop))}>America</button>
@@ -85,7 +88,7 @@ const HomeContent = ({countries, dark, setDark, isDark, setIsDark, handleTheme})
                     <button className="cntbtn" onClick={() => (setSelectedRegion('Europe'), setDrop(!drop))}>Europe</button>
                     <button className="cntbtn" onClick={() => (setSelectedRegion('Oceania'), setDrop(!drop))}>Oceania</button>
                 </div> ): ''}
-                <ul>
+                <ul className="cardHolder">
                     {/* {displayAfrica ? africanCountriesItems: countryItems } */}
                     <FilterCont countries={countries} theme={theme} selectedRegion={selectedRegion} searchValue={searchValue}/>
                 </ul>
