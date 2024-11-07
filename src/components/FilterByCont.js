@@ -38,8 +38,9 @@ const FilterCont = ({ countries, theme, selectedRegion, searchValue }) => {
         const formattedNumber = selectedCountry.population.toLocaleString();
         console.log(selectedCountry)
         return (
-            <div className="searchResultHolder">
+            <ul className="ulfortab">
                 <a href="/"  className={`goback ${theme}`}><IoArrowBack /> <span>Back</span></a>
+            <div className="searchResultHolder">
                 <div className="imgHolderTab">
                     <img src={selectedCountry.flags.png} alt={`${selectedCountry.name.common} flag`} />
                 </div>
@@ -74,6 +75,7 @@ const FilterCont = ({ countries, theme, selectedRegion, searchValue }) => {
                     </div>
                 </div>
             </div>
+            </ul>
         )
     }
 

@@ -402,6 +402,7 @@ body {
         display: flex;
         justify-content: space-around;
         align-items: center;
+        margin: 0;
     }
     .btntheme {
         background-color: transparent;
@@ -422,7 +423,7 @@ body {
         font-size: 1.4rem;
     }
 
-    .cards, .searchResultHolder{
+    .cards{
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 50px;
@@ -496,8 +497,10 @@ body {
     .searchandfilterholder {
         display: flex;
         justify-content: space-around;
-        /* width: 90%; */
-        padding: 40px;
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 20px;
+        padding-left: 25px;
        
     }
 
@@ -533,6 +536,44 @@ body {
         margin-left: 700px;
         /* overflow: hidden; */
     }
-  
+
+    .searchResultHolder {
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+    }
+    .info {
+        display: flex;
+        flex-direction: row;
+        gap: 100px;
+    }
+
+    .ulfortab {
+        display: flex;
+        flex-direction: column;
+        height: 79vh;
+        gap: 55px;
+        padding-top: 55px;
+    }
+
+    .goback {
+        width: 15%;
+        padding: 10px;
+        border-radius: 5px;
+        display: flex;
+        justify-content: space-around;
+        text-decoration: none;
+    }
+
+    .bordersHolder {
+        display: flex;
+        gap: 20px;
+    }
+
+    .searchIcon {
+        position: absolute;
+        top: 15.1%;
+        left: 10%;
+    }
   
 }
